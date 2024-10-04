@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdTech Parser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="parser.css" />
+</head>
+
+<body>
+    <div id="messageBox" class="message"></div>
+    <h2><u>XML Input</u></h2>
+    <textarea id="xmlInput" placeholder="Paste your XML here... <pms:personRecord>, <cms:courseSectionRecord>, etc."
+        wrap="off" spellcheck="false"></textarea>
+    <h2><u>File Input</u></h2>
+    <div class="input-group">
+        <input type="file" id="fileInput" accept=".xml" onclick="clearAll()">
+        <button onclick="copy()">Copy</button>
+        <button onclick="clearAll()">Clear</button>
+    </div>
+    <div id="progressContainer">
+        <h2>Processing File...</h2>
+        <div id="progressBarContainer">
+            <div id="progressBar"></div>
+        </div>
+        <p id="lineCount">Total Records: 0</p>
+    </div>
+    <h2><u>Parsed Data</u></h2>
+    <div id="totalRecords" style="display: none;"></div>
+    <div id="downloadLink" style="display: none;">
+        <a href="#" id="downloadCSVLink"><strong>Click Here</strong></a> to download the output as a CSV file.
+    </div>
+    <table id="contactTable" style="display: none;">
+        <thead>
+            <tr>
+                <th id="nameHeader" colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <br id="break" style="display: none;"></br>
+    <table id="outputTable" style="display: table;">
+        <thead>
+            <tr>
+                <th width="50%">Field</th>
+                <th width="50%">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <br>
+    <script type="text/javascript" src="parser.js"></script>
+    <br>
+    <br>
+</body>
+
+</html>
