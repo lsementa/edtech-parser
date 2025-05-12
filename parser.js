@@ -1,3 +1,5 @@
+//# allFunctionsCalledOnLoad
+
 function clearAll() {
     document.getElementById("xmlInput").value = "";
     document.getElementById("fileInput").value = "";
